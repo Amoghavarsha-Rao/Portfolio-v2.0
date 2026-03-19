@@ -103,29 +103,30 @@ li {
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.95rem;
-  color: var(--text);
-  background: linear-gradient(135deg, var(--signal), #f7dfa2);
-  box-shadow: inset 0 0 0 1px rgba(59, 59, 59, 0.08);
+  overflow: hidden;
+  flex: 0 0 auto;
+  box-shadow: 0 8px 18px rgba(99, 72, 47, 0.12);
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand-copy {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 0;
 }
 
 .brand-copy strong {
   font-size: 0.98rem;
-}
-
-.brand-copy span {
-  font-size: 0.8rem;
-  color: var(--muted);
+  line-height: 1.1;
 }
 
 .site-nav {
@@ -611,6 +612,17 @@ h3 {
   grid-template-columns: 0.8fr 1.2fr;
   gap: 20px;
   padding: 28px;
+  align-items: center;
+}
+
+.contact-card h2 {
+  max-width: none;
+  font-size: clamp(1.8rem, 4.6vw, 2.8rem);
+  line-height: 1.08;
+}
+
+.contact-actions {
+  margin-top: 0;
 }
 
 .timeline {
@@ -662,10 +674,6 @@ h3 {
 .project-card:hover {
   transform: translateY(-5px);
   border-color: rgba(239, 107, 74, 0.35);
-}
-
-.contact-card {
-  align-items: center;
 }
 
 .site-footer {
