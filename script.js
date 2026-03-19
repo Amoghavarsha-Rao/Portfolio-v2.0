@@ -63,3 +63,32 @@ if ('IntersectionObserver' in window) {
 } else {
   revealNodes.forEach((node) => node.classList.add('visible'));
 }
+
+/* ---------- Splash follow cursor ---------- */
+const splashCards = document.querySelectorAll(
+  '.feature-card, .contact-card, .hero-note, .split-card, .project-card, .framework-card, .timeline-item'
+);
+
+splashCards.forEach((card) => {
+  let trackingTimer;
+
+  card.addEventListener('mouseenter', (e) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--splash-x', `${e.clientX - rect.left}px`);
+    card.style.setProperty('--splash-y', `${e.clientY - rect.top}px`);
+    trackingTimer = setTimeout(() => card.classList.add('splash-tracking'), 550);
+  });
+
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--splash-x', `${e.clientX - rect.left}px`);
+    card.style.setProperty('--splash-y', `${e.clientY - rect.top}px`);
+  });
+
+  card.addEventListener('mouseleave', () => {
+    clearTimeout(trackingTimer);
+    card.classList.remove('splash-tracking');
+    card.style.removeProperty('--splash-x');
+    card.style.removeProperty('--splash-y');
+  });
+});
