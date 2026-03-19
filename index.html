@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arimo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="./Logo with yellow bg.svg" />
+    <link rel="icon" type="image/svg+xml" href="./assets/branding/logo-with-yellow-bg.svg" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -22,7 +22,7 @@
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Go to top">
           <span class="brand-mark" aria-hidden="true">
-            <img src="./Logo with yellow bg.svg" alt="" />
+            <img src="./assets/branding/logo-with-yellow-bg.svg" alt="" />
           </span>
           <span class="brand-copy">
             <strong>Amoghavarsha Rao</strong>
@@ -58,7 +58,7 @@
               <a class="button button-primary" href="mailto:amoghavarsharao99@gmail.com">Let’s talk</a>
               <a
                 class="button button-secondary"
-                href="https://www.dropbox.com/scl/fi/iaxkefr47080v433xjzg/Amogh-Resume-2nd-Oct.pdf?rlkey=2rbrxhwzwxsug19edipcxp7ui&st=str9n4dz&dl=0"
+                href="https://www.dropbox.com/scl/fi/qbx94xdu08ftygci6bvtq/Amogh-Resume-March-2026.pdf?rlkey=ncsf3mebuy37yay2jepz8oh74&st=6x0hhr3v&dl=0"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -71,7 +71,7 @@
            <aside class="hero-panel">
              <div class="hero-portrait">
                <img
-                 src="./Grad Photo 1.png"
+                 src="./assets/images/grad-photo-1.png"
                  alt="Amoghavarsha Rao in graduation attire"
                />
             </div>
@@ -87,7 +87,7 @@
           <div class="split-card about-card">
             <div class="split-image">
               <img
-                src="./F1 Redbull.png"
+                src="./assets/images/f1-redbull.png"
                 alt="Amoghavarsha Rao standing beside a Red Bull Formula 1 car"
               />
             </div>
@@ -110,16 +110,28 @@
         <section class="section reveal" id="frameworks">
           <div class="section-heading">
             <p class="eyebrow">Frameworks and technologies</p>
-            <h2>The stack I work in day-to-day.</h2>
+            <h2>The stack I work with.</h2>
           </div>
 
           <div class="framework-grid">
-            <div class="framework-card"><span>Azure Synapse</span></div>
-            <div class="framework-card"><span>Microsoft Fabric</span></div>
-            <div class="framework-card"><span>SSIS</span></div>
-            <div class="framework-card"><span>Python</span></div>
-            <div class="framework-card"><span>PySpark</span></div>
-            <div class="framework-card"><span>MSSQL</span></div>
+            <div class="framework-card framework-card-synapse" role="img" aria-label="Azure Synapse" title="Azure Synapse">
+              <img class="framework-icon framework-icon-synapse" src="./assets/framework-icons/azure-synapse.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="framework-card framework-card-fabric" role="img" aria-label="Microsoft Fabric" title="Microsoft Fabric">
+              <img class="framework-icon framework-icon-fabric" src="./assets/framework-icons/microsoft-fabric.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="framework-card framework-card-ssis" role="img" aria-label="SSIS" title="SSIS">
+              <img class="framework-icon framework-icon-ssis" src="./assets/framework-icons/ssis-logo.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="framework-card framework-card-python" role="img" aria-label="Python" title="Python">
+              <img class="framework-icon framework-icon-python" src="./assets/framework-icons/python-logo-notext.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="framework-card framework-card-pyspark" role="img" aria-label="PySpark" title="PySpark">
+              <img class="framework-icon framework-icon-pyspark" src="./assets/framework-icons/Apache_Spark_logo.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="framework-card framework-card-mssql" role="img" aria-label="Microsoft SQL Server" title="Microsoft SQL Server">
+              <img class="framework-icon framework-icon-mssql" src="./assets/framework-icons/mssql.svg" alt="" aria-hidden="true" />
+            </div>
           </div>
         </section>
 
@@ -136,14 +148,25 @@
               </div>
               <div class="timeline-content">
                 <h3>Data Engineer <span>Teacher Retirement System of Texas</span></h3>
-                <p>
-                  Stepped into a full-time data engineering role focused on production workflows,
-                  cloud modernization, and the consistent delivery of analytics-ready datasets.
-                </p>
-                <p>
-                  Building and refining ingestion, transformation, and reporting pipelines with an
-                  emphasis on reliability, maintainability, and smoother downstream consumption.
-                </p>
+                <ul class="timeline-list">
+                  <li>
+                    Architected Azure-based data integration pipelines across Microsoft Fabric,
+                    Azure Data Lake Storage, and Azure Synapse to support distributed analytics
+                    workloads, implementing automated shortcut synchronization that prevented stale
+                    datasets and improved downstream reliability.
+                  </li>
+                  <li>
+                    Owned daily monitoring and orchestration of production ETL and ELT pipelines for
+                    enterprise analytics delivery, resolving failures and strengthening resiliency so
+                    data remained highly available and dependable for downstream consumers.
+                  </li>
+                  <li>
+                    Contributed to an internal AI document intelligence platform by building Python and
+                    FastAPI services integrated with Azure AI Search, Azure Document Intelligence, and
+                    a RAG pipeline, enabling automated extraction, classification, and summarization of
+                    SharePoint-hosted PDFs for faster enterprise knowledge discovery.
+                  </li>
+                </ul>
                 <div class="tag-row">
                   <span>Microsoft Azure Cloud</span>
                   <span>PySpark</span>
