@@ -71,22 +71,35 @@ const splashCards = document.querySelectorAll(
 
 splashCards.forEach((card) => {
   let trackingTimer;
+  let rafId = 0;
+  let lastX = 0;
+  let lastY = 0;
+
+  function applySplash() {
+    card.style.setProperty('--splash-x', `${lastX}px`);
+    card.style.setProperty('--splash-y', `${lastY}px`);
+    rafId = 0;
+  }
+
+  function queueUpdate(e) {
+    const rect = card.getBoundingClientRect();
+    lastX = e.clientX - rect.left;
+    lastY = e.clientY - rect.top;
+    if (!rafId) {
+      rafId = requestAnimationFrame(applySplash);
+    }
+  }
 
   card.addEventListener('mouseenter', (e) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--splash-x', `${e.clientX - rect.left}px`);
-    card.style.setProperty('--splash-y', `${e.clientY - rect.top}px`);
+    queueUpdate(e);
     trackingTimer = setTimeout(() => card.classList.add('splash-tracking'), 550);
   });
 
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--splash-x', `${e.clientX - rect.left}px`);
-    card.style.setProperty('--splash-y', `${e.clientY - rect.top}px`);
-  });
+  card.addEventListener('mousemove', queueUpdate);
 
   card.addEventListener('mouseleave', () => {
     clearTimeout(trackingTimer);
+    if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
     card.classList.remove('splash-tracking');
     card.style.removeProperty('--splash-x');
     card.style.removeProperty('--splash-y');
